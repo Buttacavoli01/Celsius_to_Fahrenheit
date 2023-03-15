@@ -36,9 +36,5 @@ def graph_ratio():
 
     plt.show()
     total = sum(celc_arr)
-    print(total)
-
-
-#print(dict)
 
 graph_ratio()
