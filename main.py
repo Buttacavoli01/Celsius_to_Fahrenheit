@@ -14,25 +14,31 @@ def temp_converter(a, b) :
 
 def graph_ratio():
     x = 0
+    y = 0
     celc_arr = []
+    f_arr = []
 
     while x <= 100:
         tmp_f = x * 9/5 + 32
-        temp_diff = tmp_f - x
-        celc_arr.append(round(temp_diff, 2))
+        celc_arr.append(round(tmp_f, 2))
         x += 1
+    while y <= 212:
+        tmp_c = y - 32 * 5/9
+        f_arr.append(tmp_c)
+        y += 1
+
     #print(celc_arr)
 
-    fig, ax = plt.subplots(figsize=(40, 24))
+    fig, ax = plt.subplots(figsize=(30, 18))
     ax.plot(celc_arr, linestyle='--', marker='*', color='r', label='line with marker')
 
     plt.legend()
     ax.set_title('Ratio between conversion of Celsius to Fahrenheit')
-    plt.xticks(range(0, 101, 1))
-    plt.yticks(range(30, 113, 1))
+    plt.xticks(range(0, 102, 1))
+    plt.yticks(range(30, 214, 2))
     plt.grid()
-    plt.xlabel("degrees in Celsius")
-    plt.ylabel('Rate of Change from C to F')
+    plt.xlabel("Degrees in Celsius")
+    plt.ylabel('Degrees In Fahrenheit')
     plt.savefig('Ratio_Change.png')
     plt.show()
 
